@@ -1,0 +1,173 @@
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		<script src="initGame.js" ></script>
+		<script src="listutil.js" ></script>
+		<script src="game.js" ></script>
+		
+		<script>
+			//alert("*"+printf(68,10)+"\n*"+printf("wang",10));
+			function getselect()
+			{
+				var selectBox=$("Layer1");
+				var selectTitle=$("pantext");
+				var button1=$("panbutton1");
+				var button2=$("panbutton2");
+			}
+		</script>
+		<style>
+			.shopdiv
+			{
+				width:300px;
+				float:left;
+			}
+			.buybuttondiv
+			{
+				width:200px;
+				float:left;
+			}
+			.mygoodsdiv
+			{
+				width:400px;
+				float:left;
+			}
+			.input
+			{
+	background-color:#000000;
+	color:#00FF00;
+	width:200px;
+	height:25px;
+	margin-bottom:10px;
+	font-weight:600;
+	font-size:25px;
+	text-align:center;
+	border-top-style: inset;
+	border-right-style: inset;
+	border-bottom-style: inset;
+	border-left-style: inset;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+			}
+			.add{
+				width:100%; height:40px;;
+			}
+		#Layer1 {
+	position:absolute;
+	width:206px;
+	height:113px;
+	z-index:1;
+	background-color: #B4DADA;
+	border: medium solid #006699;
+	left: 352px;
+	top: 144px;
+}
+        .STYLE1 {
+	color: #800000;
+	font-weight: bold;
+}
+        </style>
+	</head>
+	<body onLoad="init()">
+	    <table width="699" height="273" border="0" align="center">
+          <tr>
+            <td width="693" align="left" valign="top"><table width="100%" border="0" cellpadding="5">
+                   <tr>
+                     <td width="50%" align="right">北京浮生记 </td>
+                     <td width="6%" align="right"><div style="width:30px; float:left" id="date" >1</div></td>
+                     <td width="44%">天</td>
+                   </tr>
+              </table>
+                 <table width="690" height="234" border="1" align="center" bgcolor="#EBEBE7">
+              <tr>
+                <td height="35" colspan="2" align="center" valign="middle"><div align="center">地铁门口的黑市</div></td>
+                <td width="147" rowspan="3" align="center" valign="middle">
+                  <p>买进<br>
+                      <input name="button" type="button"  onClick="buy()" value=" = = &gt; ">
+                  </p>
+                  <p>&nbsp;</p>                  <p>卖出<br>
+                      <input name="button" type="button" onClick="sell()" value=" &lt; = = ">
+                </p></td>
+                <td colspan="3"><div align="center">
+                  <div style="float:left">自己的商品:</div>
+                  <div id="goodscount" style="text-align:right">100 / 654 个</div></div></td>
+              </tr>
+              <tr>
+                <td width="157" height="21" align="left" valign="top">商品</td>
+                <td width="70" align="left" valign="top">黑市价格</td>
+                <td width="139">商品名称</td>
+                <td width="74">买入价格</td>
+                <td width="63">数量</td>
+              </tr>
+              <tr>
+                <td height="166" colspan="2" align="left" valign="top"><label></label>
+                  <select id="shop" name="select" size="12" style="width:100%; text-align:left">
+                   
+                  </select></td>
+                <td colspan="3" align="left" valign="top"><select id="goods" name="select2" size="12" style="width:100%;">
+                
+                </select></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="100%" border="1" bgcolor="#EBEBE7">
+              <tr>
+                <td width="8%"><p>现金:</p>
+                <p>存款:</p>
+                <p>欠债:</p>
+                <p>健康:</p></td>
+                <td width="32%" align="left" valign="middle">
+				<div id="money" class="input" style="margin-top:10px;">121231</div>
+				<div id="saving" class="input">123123123</div>
+				<div class="input" id="arrear" style="color:#FF0000">234234</div>
+				<div id="health" class="input" style="width:100px;">10</div>				</td>
+                <td width="60%" align="left" valign="middle"><table width="100%" border="0" cellpadding="0" cellspacing="10">
+                  <tr>
+                    <td height="35">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><input type="button" class="add" name="Submit22" onClick="changeAdd()" value="深圳"></td>
+                    <td><input type="button" class="add" name="Submit222" onClick="changeAdd()" value="广州"></td>
+                    <td><input type="button" class="add" name="Submit2222" onClick="changeAdd()" value="香港"></td>
+                  </tr>
+                  <tr>
+                    <td height="35"><label>
+                      <input type="button" class="add" name="Submit" onClick="changeAdd()" value="北京">
+                    </label></td>
+                    <td><input type="button" class="add" name="Submit2" onClick="changeAdd()" value="上海"></td>
+                    <td><input type="button" class="add" name="Submit2233" onClick="changeAdd()" value="天津"></td>
+                    <td>&nbsp;</td>
+                    <td><input type="button" class="add" name="Submit2232" onClick="changeAdd()" value="台湾"></td>
+                  </tr>
+                  <tr>
+                    <td height="34">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><input type="button" class="add" name="Submit2232222" onClick="changeAdd()" value="贵阳"></td>
+                    <td><input type="button" class="add" name="Submit223222" onClick="changeAdd()" value="武汉"></td>
+                    <td><input type="button" class="add" name="Submit22322" onClick="changeAdd()" value="长沙"></td>
+                  </tr>
+                </table> </td>
+              </tr>
+              <tr>
+                <td height="64" colspan="3"><table width="100%" border="0" cellpadding="5" cellspacing="20">
+                  <tr>
+                    <td width="17%"><label>
+                      <input onClick="saving()" type="button" name="Submit3" style="width:100%; height:30px;" value=" 银 行 ">
+                    </label></td>
+                    <td width="18%"><input type="button" onClick="goHospital()"  name="Submit32" style="width:100%; height:30px;" value="医 院"></td>
+                    <td width="17%"><input onClick="back()" type="button" name="Submit322" style="width:100%; height:30px;" value="邮 局"></td>
+                    <td width="18%"><input type="button" name="Submit3222" style="width:100%; height:30px;" value="首都机场"></td>
+                    <td width="30%"><input type="button" name="Submit32222" style="width:100px; height:30px;" value="离 开"></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table>
+	    
+	    <p>&nbsp;</p>
+    </body>
+</html>
